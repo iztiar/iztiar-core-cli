@@ -1,0 +1,30 @@
+Controller
+    is the main daemon which manages all other (things?)
+    controller is responsible for starting a dedicated local-to-the-host mqtt broker (here aedes)
+    the default behavior is to start this broker
+
+    is there several controllers on a host ?
+        why not
+        are identified by a user-provided name
+            which eventually resolves to a systemd-service name
+
+    when starting a controller, we says to it that it has to connect to a parent controller
+        on the same host -> so a child connects to a parent
+        on another host ?
+            why not
+
+    are several controllers meants to work together ?
+        this would be fine but shouldn't be mandatory
+
+    there may be many (at least several)
+    there are identified
+        locally by a user-provided name
+        remotely by the host+local_identifier
+
+    eventually there is a main controller which knows about all others
+
+    ***
+    *** There should be one and only one message bus per host and per environment (production, development, staging, etc.)
+    *** As a consequence, the controller which manages this message bus is said the main controller of this host
+    *** and all management commands received by other controllers on this host have to be forwarded to this main controller
+    ***

@@ -1,0 +1,50 @@
+ Iztiar - TODO
+
+ Summary
+ =======
+
+   Todo
+   Done
+
+-------------------------------------------------------------------------------------------
+ Todo
+ ====
+
+    1 2022- 1-29 coreCmdline: accept that long options be abbreviated
+
+    2 2022- 1-29 coreCmdline: improve help message, gracefully exiting
+                 e.g. displaying a copyright message
+
+    3 2022- 1-29 coreCmdline: improve version message, gracefully exiting
+                 e.g. displaying a copyright message
+                 e.g. displaying some more verbose message
+
+    4 2022- 1-29 coreCmdline: better manage error display + mastering program exit code
+
+    5 2022- 1-29 coreLogger: manage colors
+
+    6 2022- 1-29 coreCmdline: config/plugins/storageDirs defaults are hardcoded in global.js
+                 should be overridable in environment before being eventually overiden that the command-line
+
+    7 2022- 1-29 coreCmdline: only the first subcommand is considered, followings are ignored
+                 while they should trigger an error (most probably is from commander origin)
+
+    8 2022- 1-29 coreCmdline: eat considered subcommand, leaving others in remaining
+                 + check remaining is empty
+
+    9 2022- 1-30 forked process should log to a file or to journalctl
+
+   11 2022- 1-30 mastering main cli exit code
+
+   12 
+
+-------------------------------------------------------------------------------------------
+ Done
+ ====
+
+   10 2022- 1-30 main cli process should wait for controller advertising (if any) before quitting
+      2022- 1-30 done
+
+-------------------------------------------------------------------------------------------
+ P. Wieser - Created on 2022, Jan. 29th
+             Last updated on 2022, Jan. 29th

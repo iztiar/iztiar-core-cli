@@ -1,0 +1,15 @@
+README.Dirs
+
+    There is one main <storageDir>, defaulting to /var/lib/iztiar in *nix-like systems.
+    This is the root directory for configurations, plugins, data storage, logs.
+
+    This hard-coded default has been expected to be overridable by the value found in iztiar.json
+        so we had here the well-known chicken-and-egg problem,
+        as the configuration dir is said to be <storageDir>/config
+
+    So, we just say that:
+        <storageDir> has a hard-coded default
+        which may be overriden by a command-line option.
+
+    Because <storageDir> addresses all configuration files, it is also determinant when
+    qualifying a running environment (production, development, staging, test and so on).

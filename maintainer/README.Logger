@@ -1,0 +1,16 @@
+README.Logger
+
+    Application can only be fully initialized when we have analyzed our configuration files.
+    Which requires to have previously parsed the command-line.
+
+    Log files are written in log directory which is <storageDir>/logs
+
+    As a direct consequence, application initialization must begin with
+
+        parse command-line
+            setup <storageDir>
+            so define <logDir> = <storageDir>/logs
+            so can initialize a logger
+
+        load configurations
+        continue...

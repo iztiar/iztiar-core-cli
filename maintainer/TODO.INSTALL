@@ -1,0 +1,11 @@
+Installation
+    must be run by root
+    must define a user/uid/guid
+    create storageDir
+        
+        # useradd -b /var/lib -G wheel -m -r -U iztiar
+
+    create configDir
+    define the systemd service
+        record all the defined controller services into a config.json into configDir
+        

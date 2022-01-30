@@ -1,0 +1,46 @@
+{
+    "comment": [
+        "See https://docs.npmjs.com/cli/v6/configuring-npm/package-json"
+    ],
+    "name": "iztiar",
+    "description": "A field of stars",
+    "version": "0.1.0",
+    "exports": "./lib/index.js",
+    "type": "module",
+    "license": "TBD",
+    "author": "Pierre Wieser",
+    "maintainers": [
+        "TBD"
+    ],
+    "scripts": {},
+    "repository": {
+        "type": "git"
+    },
+    "bin": {
+        "iztiar": "./lib/cli.js"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "files": [
+        "README.md",
+        "config-sample.json",
+        "LICENSE",
+        "lib",
+        "bin"
+    ],
+    "preferGlobal": true,
+    "dependencies": {
+        "aedes": "^0.46.2",
+        "aedes-logging": "^2.0.1",
+        "aedes-persistence": "^8.1.3",
+        "aedes-server-factory": "^0.2.1",
+        "aedes-stats": "^4.0.0",
+        "chalk": "^5.0.0",
+        "commander": "^8.3",
+        "mqemitter": "^4.5.0",
+        "pino": "^7.6",
+        "semver": "^7.3.5",
+        "sprintf-js": "^1.1.2"
+    }
+}
