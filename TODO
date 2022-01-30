@@ -36,7 +36,9 @@
 
    11 2022- 1-30 mastering main cli exit code
 
-   12 
+   12 2022- 1-30 refuse to start a controller with an already running name
+
+   13
 
 -------------------------------------------------------------------------------------------
  Done
