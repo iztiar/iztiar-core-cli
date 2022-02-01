@@ -39,11 +39,10 @@
                  do not forgive to unlinking run/ json files
 
    15 2022- 2- 1 when requesting for 'iz.status', have a timeout if the server doesn't answer
+                 rather handle ECONNREFUSED exception
 
    16 2022- 2- 1 test for starting a second controller managed by a first one
                  handle the case where the first one is not present or not capable
-
-   17 2022- 2- 1 utils.makeFnameDirExists() should call a utils.makeDirExists() to be written
 
    18 2022- 2- 1 write a line on server log when the child quits
 
@@ -73,6 +72,9 @@
 
    13 2022- 2- 1 broker status is not displayed when asking for 'iztiar status'
       2022- 2- 1 fixed (had to run a mqtt server + a tcp server, each on their own port)
+
+   17 2022- 2- 1 utils.makeFnameDirExists() should call a utils.makeDirExists() to be written
+      2022- 2- 1 done
 
 -------------------------------------------------------------------------------------------
  P. Wieser - Created on 2022, Jan. 29th
