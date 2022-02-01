@@ -34,17 +34,11 @@
 
    12 2022- 1-30 refuse to start a controller with an already running name
 
-   14 2022- 2- 1 cliStop(): stop the running servers
-                 stop the child processes, first by a 'iz.stop' command, then by killing pid's
-                 do not forgive to unlinking run/ json files
-
    15 2022- 2- 1 when requesting for 'iz.status', have a timeout if the server doesn't answer
                  rather handle ECONNREFUSED exception
 
    16 2022- 2- 1 test for starting a second controller managed by a first one
                  handle the case where the first one is not present or not capable
-
-   18 2022- 2- 1 write a line on server log when the child quits
 
    19 2022- 2- 1 be able to change the log level of a server at runtime, distinguishing every server
 
@@ -73,7 +67,15 @@
    13 2022- 2- 1 broker status is not displayed when asking for 'iztiar status'
       2022- 2- 1 fixed (had to run a mqtt server + a tcp server, each on their own port)
 
+   14 2022- 2- 1 cliStop(): stop the running servers
+                 stop the child processes, first by a 'iz.stop' command, then by killing pid's
+                 do not forgive to unlinking run/ json files
+      2022- 2- 1 done
+
    17 2022- 2- 1 utils.makeFnameDirExists() should call a utils.makeDirExists() to be written
+      2022- 2- 1 done
+
+   18 2022- 2- 1 write a line on server log when the child quits
       2022- 2- 1 done
 
 -------------------------------------------------------------------------------------------
