@@ -23,9 +23,6 @@
 
     5 2022- 1-29 coreLogger: manage colors
 
-    6 2022- 1-29 coreCmdline: config/plugins/storageDirs defaults are hardcoded in global.js
-                 should be overridable in environment before being eventually overiden that the command-line
-
     7 2022- 1-29 coreCmdline: only the first subcommand is considered, followings are ignored
                  while they should trigger an error (most probably is from commander origin)
 
@@ -33,16 +30,33 @@
                  + check remaining is empty
 
     9 2022- 1-30 forked process should log to a file or to journalctl
+      2022- 2- 1 seems that only info level is logged ?
 
    11 2022- 1-30 mastering main cli exit code
+      2022- 2- 1 at the moment, only cliStart() set the return code of the process
 
    12 2022- 1-30 refuse to start a controller with an already running name
 
-   13
+   13 2022- 2- 1 broker status is not displayed when asking for 'iztiar status'
+
+   14 2022- 2- 1 stop the child processes, first by a 'iz.stop' command, then by killing pid's
+
+   15 2022- 2- 1 when requesting for 'iz.status', have a timeout if the server doesn't answer
+
+   16 2022- 2- 1 test for starting a second controller managed by a first one
+                 handle the case where the first one is not present or not capable
+
+   17 2022- 2- 1 utils.makeFnameDirExists() should call a utils.makeDirExists() to be written
+
+   18
 
 -------------------------------------------------------------------------------------------
  Done
  ====
+
+    6 2022- 1-29 coreCmdline: config/plugins/storageDirs defaults are hardcoded in global.js
+                 should be overridable in environment before being eventually overiden that the command-line
+      2022- 2- 1 useless: the command-line option is enough -> closed
 
    10 2022- 1-30 main cli process should wait for controller advertising (if any) before quitting
       2022- 1-30 done
