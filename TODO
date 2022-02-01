@@ -34,9 +34,9 @@
 
    12 2022- 1-30 refuse to start a controller with an already running name
 
-   13 2022- 2- 1 broker status is not displayed when asking for 'iztiar status'
-
-   14 2022- 2- 1 stop the child processes, first by a 'iz.stop' command, then by killing pid's
+   14 2022- 2- 1 cliStop(): stop the running servers
+                 stop the child processes, first by a 'iz.stop' command, then by killing pid's
+                 do not forgive to unlinking run/ json files
 
    15 2022- 2- 1 when requesting for 'iz.status', have a timeout if the server doesn't answer
 
@@ -70,6 +70,9 @@
 
    10 2022- 1-30 main cli process should wait for controller advertising (if any) before quitting
       2022- 1-30 done
+
+   13 2022- 2- 1 broker status is not displayed when asking for 'iztiar status'
+      2022- 2- 1 fixed (had to run a mqtt server + a tcp server, each on their own port)
 
 -------------------------------------------------------------------------------------------
  P. Wieser - Created on 2022, Jan. 29th
