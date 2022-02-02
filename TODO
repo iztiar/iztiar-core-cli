@@ -47,7 +47,13 @@
 
    21 2022- 2- 1 be able to log to journalctl, via a command-line and/or configuration option
 
-   22
+   22 2022- 2- 2 command iz.start.broker / iz.stop.broker
+
+   23 2022- 2- 2 command iz.start.managed / iz.stop.managed
+
+   24 2022- 2- 2 command iz.set.loglevel
+
+   25
 
 -------------------------------------------------------------------------------------------
  Done

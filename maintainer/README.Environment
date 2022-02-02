@@ -7,4 +7,4 @@ Iztiar honors (is expected to honor one day or another)
         {string[]} a space-separated list of classes to be debugged
         with
             'preCore' as a special class until a coreLogger be instanciated
-            
+            'logLevel' to log even when the logLovel doesn't allow that
