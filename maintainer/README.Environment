@@ -1,0 +1,10 @@
+Iztiar honors (is expected to honor one day or another)
+
+    IZTIAR_ENV
+        {string} the Iztiar environment (production, staging, etc.)
+        does nothing as of 0.x
+    IZTIAR_DEBUG
+        {string[]} a space-separated list of classes to be debugged
+        with
+            'preCore' as a special class until a coreLogger be instanciated
+            
