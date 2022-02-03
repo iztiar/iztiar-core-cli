@@ -40,6 +40,7 @@
         "commander": "^8.3",
         "deepequal": "0.0.1",
         "mqemitter": "^4.5.0",
+        "pidusage": "^3.0.0",
         "pino": "^7.6",
         "semver": "^7.3.5",
         "sprintf-js": "^1.1.2"

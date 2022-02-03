@@ -42,9 +42,6 @@
 
    19 2022- 2- 1 be able to change the log level of a server at runtime, distinguishing every server
 
-   20 2022- 2- 1 throw exception rather than returning a coreResult (so throw a coreResult exception)
-                 as this is more efficient and easier to manage
-
    21 2022- 2- 1 be able to log to journalctl, via a command-line and/or configuration option
 
    22 2022- 2- 2 command iz.start.broker / iz.stop.broker
@@ -83,6 +80,10 @@
 
    18 2022- 2- 1 write a line on server log when the child quits
       2022- 2- 1 done
+
+   20 2022- 2- 1 throw exception rather than returning a coreError (so throw a coreError exception)
+                 as this is more efficient and easier to manage
+      2022- 2- 3 done
 
 -------------------------------------------------------------------------------------------
  P. Wieser - Created on 2022, Jan. 29th
