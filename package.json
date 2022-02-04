@@ -42,6 +42,7 @@
         "mqemitter": "^4.5.0",
         "pidusage": "^3.0.0",
         "pino": "^7.6",
+        "ps": "^1.0.0",
         "semver": "^7.3.5",
         "sprintf-js": "^1.1.2"
     }

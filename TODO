@@ -50,7 +50,15 @@
 
    24 2022- 2- 2 command iz.set.loglevel
 
-   25
+   25 2022- 2- 4 review logger : doe all should go to the log ? and the loglevel only applying to the console
+
+   26 2022- 2- 4 review runtime configuration to have a main controller and manager controllers
+
+   27 2022- 2- 4 review coreRuntime to not read json file each time
+
+   28 2022- 2- 4 have a forked status in two phases: the pid is it alive, the process does it answer
+
+   29
 
 -------------------------------------------------------------------------------------------
  Done
