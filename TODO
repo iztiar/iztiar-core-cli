@@ -58,7 +58,21 @@
 
    28 2022- 2- 4 have a forked status in two phases: the pid is it alive, the process does it answer
 
-   29
+   29 2022- 2- 6 when reading a controller configuration, check that we have managed *or* manager
+
+   30 2022- 2- 6 when counting services implied by a controller (on start, stop, etc),
+                  check for a potential broker in each subcontroller
+
+   31 2022- 2- 6 when counting services implied by a controller (on start, stop, etc),
+                  check that there is no loop (a subcontroller does not try to start a top controller of the hierarchy)
+
+   33 2022- 2- 6 make sure the controller/subcontrolller hierarchy is one level max (ie. FLAT)
+
+   34 2022- 2- 6 coreCmdline: have a log.info line 'process invoked wth parameters'
+
+   35 2022- 2- 6 coreRunfile: use mv/rename to get an atomic lock
+
+   36
 
 -------------------------------------------------------------------------------------------
  Done

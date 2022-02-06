@@ -1,30 +1,52 @@
 Controller
-    is the main daemon which manages all other (things?)
-    controller is responsible for starting a dedicated local-to-the-host mqtt broker (here aedes)
-    the default behavior is to start this broker
+    What is it
+        A coreController is thought to manage other daemons, the WebUI being only one particular of these.
+        Several coreController's may collaborate together, provided that all collaborating controllers be in the same host.
 
-    is there several controllers on a host ?
-        why not
-        are identified by a user-provided name
-            which eventually resolves to a systemd-service name
+        In other words, a very big architecture may be:
 
-    when starting a controller, we says to it that it has to connect to a parent controller
-        on the same host -> so a child connects to a parent
-        on another host ?
-            why not
+            - the main host of the application because it hosts the main database
+                offers probably also WEB UI service
+                has one main coreController
+                has maybe one coreBroker which offers messaging service
+                may have zero to several managed coreControllers
+                    e.g. one managed controller by protocol gateway
+            
+            - zero to several other hosts
+                each one having one main coreController, itself being managed by the main coreController from the main host
+                each one having most probably one coreBroker
+                each one have zero to several (locally) managed coreControllers.
 
-    are several controllers meants to work together ?
-        this would be fine but shouldn't be mandatory
+    Management
+        The coreController is identified by a name
+            freely chosen by the user
+            which must be unique on the host (and that we suggest to make unique in the whole architecture)
+            Whether the coreController is the main one on the host, or a managed one is chosen at startup time:
+            to start a managed coreController, you have to say at startup by which coreController it is managed by.
 
-    there may be many (at least several)
-    there are identified
-        locally by a user-provided name
-        remotely by the host+local_identifier
+        Note:
+            Though it must be only one main coreController on the host, this sentence must be understood for a given
+            running environment (development, production, etc.).
+            See README.Architecture for a word about environments.
 
-    eventually there is a main controller which knows about all others
+        Say you have several controllers on a same host:
+        - you can start them individually from the command-line
+        - but you'd better take advantage of a configuration file and let Iztiar starts them all together.
 
-    ***
-    *** There should be one and only one message bus per host and per environment (production, development, staging, etc.)
-    *** As a consequence, the controller which manages this message bus is said the main controller of this host
-    *** and all management commands received by other controllers on this host have to be forwarded to this main controller
-    ***
+        When a coreController is stopped from the command-line, all the servers it has started itself
+        are automatically stopped together.
+        When the main coreController happens to be stopped this way, one the managed controllers, if any, which
+        will be kept alive after the operation, is automatically designated as the new main coreController.
+
+                                                      +----------------------+
+                                                      | (top) coreController |
+                                                      +----------+-----------+
+                                                                 |
+                +-------------------+---------------------+------+----------------------------------------------------------------------+
+                v                   v                     v                                             v                 v             v
+          +------------+  +------------------+  +------------------+                          +------------------+  +----------+  +----------+
+          | coreBroker |  | coreController 1 |  | coreController 2 |                          | coreController 3 |  | plugin 1 |  | plugin 2 |
+          +------------+  +------------------+  +------------------+                          +------------------+  +----------+  +----------+
+                            +------------+      +------------+  +-----------+  +-----------+      +-----------+
+                            | coreBroker |      | coreBroker |  | plugin 21 |  | plugin 22 |      | plugin 31 |
+                            +------------+      +------------+  +-----------+  +-----------+      +-----------+
