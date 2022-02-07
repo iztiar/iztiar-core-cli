@@ -72,7 +72,16 @@
 
    35 2022- 2- 6 coreRunfile: use mv/rename to get an atomic lock
 
-   36
+   36 2022- 2- 6 start: have an option force-clear to reset the state of stalled runfiles
+                 status: have an option remove to remove the stalled services from runfiles
+                 or have a clear command to behave like this ?
+
+   37 2022- 2- 7 IZTIAR_DEBUG="" bin/iztiar start -l test debug
+                 Cmdline bug ? unable to get the servicename just rifght after parse
+
+   38 2022- 2- 7 a controller cannot be named 'ALL' - and this must be checked
+
+   39
 
 -------------------------------------------------------------------------------------------
  Done
