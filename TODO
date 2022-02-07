@@ -80,8 +80,17 @@
                  Cmdline bug ? unable to get the servicename just rifght after parse
 
    38 2022- 2- 7 a controller cannot be named 'ALL' - and this must be checked
+                  in cliStart() + in checkStatus() + in cliStop()
+      2022- 2- 8 checkServiceWithJson() done => cliStatus() done
 
-   39
+   40 2022- 2- 7 cliStop(): implement the force-stop option
+
+   41 2022- 2- 7 cliStart(): the broker should only be forked when the controller has confirmed its startup
+                 e.g. in startupOnIPCMessage()
+
+   42 2022- 2- 7 have a list of said running services command
+
+   43
 
 -------------------------------------------------------------------------------------------
  Done
@@ -115,6 +124,9 @@
    20 2022- 2- 1 throw exception rather than returning a coreError (so throw a coreError exception)
                  as this is more efficient and easier to manage
       2022- 2- 3 done
+
+   39 2022- 2- 7 checkStatus() must have a coreController
+      2022- 2- 8 done
 
 -------------------------------------------------------------------------------------------
  P. Wieser - Created on 2022, Jan. 29th
