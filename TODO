@@ -29,14 +29,6 @@
     8 2022- 1-29 coreCmdline: eat considered subcommand, leaving others in remaining
                  + check remaining is empty
 
-   11 2022- 1-30 mastering main cli exit code
-      2022- 2- 1 at the moment, only cliStart() set the return code of the process
-
-   12 2022- 1-30 refuse to start a controller with an already running name
-
-   15 2022- 2- 1 when requesting for 'iz.status', have a timeout if the server doesn't answer
-                 rather handle ECONNREFUSED exception
-
    16 2022- 2- 1 test for starting a second controller managed by a first one
                  handle the case where the first one is not present or not capable
 
@@ -50,13 +42,8 @@
 
    24 2022- 2- 2 command iz.set.loglevel
 
-   25 2022- 2- 4 review logger : doe all should go to the log ? and the loglevel only applying to the console
-
-   26 2022- 2- 4 review runtime configuration to have a main controller and manager controllers
-
-   27 2022- 2- 4 review coreRuntime to not read json file each time
-
-   28 2022- 2- 4 have a forked status in two phases: the pid is it alive, the process does it answer
+   26 2022- 2- 4 review runtime configuration to have a main controller and managed controllers
+      2022- 2- 8 implemented - to be validated - see also #16
 
    29 2022- 2- 6 when reading a controller configuration, check that we have managed *or* manager
 
@@ -72,10 +59,6 @@
 
    35 2022- 2- 6 coreRunfile: use mv/rename to get an atomic lock
 
-   36 2022- 2- 6 start: have an option force-clear to reset the state of stalled runfiles
-                 status: have an option remove to remove the stalled services from runfiles
-                 or have a clear command to behave like this ?
-
    37 2022- 2- 7 IZTIAR_DEBUG="" bin/iztiar start -l test debug
                  Cmdline bug ? unable to get the servicename just rifght after parse
 
@@ -84,7 +67,9 @@
 
    42 2022- 2- 7 have a list of said running services command
 
-   43
+   43 2022- 2- 8 checkService() doesn't request status if ping has abort
+
+   44
 
 -------------------------------------------------------------------------------------------
  Done
@@ -101,6 +86,13 @@
    10 2022- 1-30 main cli process should wait for controller advertising (if any) before quitting
       2022- 1-30 done
 
+   11 2022- 1-30 mastering main cli exit code
+      2022- 2- 1 at the moment, only cliStart() set the return code of the process
+      2022- 2- 8 done via Iztiar.exitCode()
+
+   12 2022- 1-30 refuse to start a controller with an already running name
+      2022- 2- 8 done
+
    13 2022- 2- 1 broker status is not displayed when asking for 'iztiar status'
       2022- 2- 1 fixed (had to run a mqtt server + a tcp server, each on their own port)
 
@@ -108,6 +100,10 @@
                  stop the child processes, first by a 'iz.stop' command, then by killing pid's
                  do not forgive to unlinking run/ json files
       2022- 2- 1 done
+
+   15 2022- 2- 1 when requesting for 'iz.status', have a timeout if the server doesn't answer
+                 rather handle ECONNREFUSED exception
+      2022- 2- 8 seems to be out of the box and a feature already available
 
    17 2022- 2- 1 utils.makeFnameDirExists() should call a utils.makeDirExists() to be written
       2022- 2- 1 done
@@ -118,6 +114,21 @@
    20 2022- 2- 1 throw exception rather than returning a coreError (so throw a coreError exception)
                  as this is more efficient and easier to manage
       2022- 2- 3 done
+
+   25 2022- 2- 4 review logger : doe all should go to the log ? and the loglevel only applying to the console
+      2022- 2- 8 logger goes to file with logLevel. Dot.
+                 console is only concerned about by verbose mode
+
+   27 2022- 2- 4 review coreRuntime to not read json file each time
+      2022- 2- 8 cancelled as we have to be sure we work with the very last version
+
+   28 2022- 2- 4 have a forked status in two phases: the pid is it alive, the process does it answer
+      2022- 2- 8 implemented this way in coreForkable.CheckService()
+
+   36 2022- 2- 6 start: have an option force-clear to reset the state of stalled runfiles
+                 status: have an option remove to remove the stalled services from runfiles
+                 or have a clear command to behave like this ?
+      2022- 2- 8 use --force-stop when stopping a service makes sure the environment is left clean
 
    38 2022- 2- 7 a controller cannot be named 'ALL' - and this must be checked
                   in cliStart() + in checkStatus() + in cliStop()
