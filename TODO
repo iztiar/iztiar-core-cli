@@ -83,8 +83,6 @@
                   in cliStart() + in checkStatus() + in cliStop()
       2022- 2- 8 checkServiceWithJson() done => cliStatus() done
 
-   40 2022- 2- 7 cliStop(): implement the force-stop option
-
    41 2022- 2- 7 cliStart(): the broker should only be forked when the controller has confirmed its startup
                  e.g. in startupOnIPCMessage()
 
@@ -126,6 +124,9 @@
       2022- 2- 3 done
 
    39 2022- 2- 7 checkStatus() must have a coreController
+      2022- 2- 8 done
+
+   40 2022- 2- 7 cliStop(): implement the force-stop option
       2022- 2- 8 done
 
 -------------------------------------------------------------------------------------------
