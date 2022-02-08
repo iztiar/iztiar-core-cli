@@ -79,10 +79,6 @@
    37 2022- 2- 7 IZTIAR_DEBUG="" bin/iztiar start -l test debug
                  Cmdline bug ? unable to get the servicename just rifght after parse
 
-   38 2022- 2- 7 a controller cannot be named 'ALL' - and this must be checked
-                  in cliStart() + in checkStatus() + in cliStop()
-      2022- 2- 8 checkServiceWithJson() done => cliStatus() done
-
    41 2022- 2- 7 cliStart(): the broker should only be forked when the controller has confirmed its startup
                  e.g. in startupOnIPCMessage()
 
@@ -122,6 +118,11 @@
    20 2022- 2- 1 throw exception rather than returning a coreError (so throw a coreError exception)
                  as this is more efficient and easier to manage
       2022- 2- 3 done
+
+   38 2022- 2- 7 a controller cannot be named 'ALL' - and this must be checked
+                  in cliStart() + in checkStatus() + in cliStop()
+      2022- 2- 8 checkServiceWithJson() done => cliStatus() done
+      2022- 2- 8 cliStart() updated accordingly
 
    39 2022- 2- 7 checkStatus() must have a coreController
       2022- 2- 8 done
