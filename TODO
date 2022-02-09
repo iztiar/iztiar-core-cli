@@ -48,8 +48,6 @@
    37 2022- 2- 7 IZTIAR_DEBUG="" bin/iztiar start -l test debug
                  Cmdline bug ? unable to get the servicename just rifght after parse
 
-   42 2022- 2- 7 have a list of said running services command
-
    44 2022- 2- 9 when stopping, have an option to also stop managed controllers
 
    45 2022- 2- 9 on checkService() have an option to be quiet, only errors, normal, verbose
@@ -157,6 +155,9 @@
    41 2022- 2- 7 cliStart(): the broker should only be forked when the controller has confirmed its startup
                  e.g. in startupOnIPCMessage()
       2022- 2- 9 done
+
+   42 2022- 2- 7 have a list of said running services command
+      2022- 2- 9 done with list-runnings action
 
    43 2022- 2- 8 checkService() doesn't request status if ping has abort
       2022- 2- 8 done
