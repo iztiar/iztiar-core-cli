@@ -38,8 +38,6 @@
 
    23 2022- 2- 2 command iz.start.managed / iz.stop.managed
 
-   29 2022- 2- 6 when reading a controller configuration, check that we have managed *or* manager
-
    31 2022- 2- 6 when counting services implied by a controller (on start, stop, etc),
                   check that there is no loop (a subcontroller does not try to start a top controller of the hierarchy)
 
@@ -129,6 +127,9 @@
 
    28 2022- 2- 4 have a forked status in two phases: the pid is it alive, the process does it answer
       2022- 2- 8 implemented this way in coreForkable.CheckService()
+
+   29 2022- 2- 6 when reading a controller configuration, check that we have managed *or* manager
+      2022- 2- 9 done
 
    30 2022- 2- 6 when counting services implied by a controller (on start, stop, etc),
                   check for a potential broker in each subcontroller
