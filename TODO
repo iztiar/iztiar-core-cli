@@ -29,10 +29,8 @@
     8 2022- 1-29 coreCmdline: eat considered subcommand, leaving others in remaining
                  + check remaining is empty
 
-   16 2022- 2- 1 test for starting a second controller managed by a first one
-                 handle the case where the first one is not present or not capable
-
    19 2022- 2- 1 be able to change the log level of a server at runtime, distinguishing every server
+      2022- 2- 9 command iz.set.loglevel
 
    21 2022- 2- 1 be able to log to journalctl, via a command-line and/or configuration option
 
@@ -40,36 +38,32 @@
 
    23 2022- 2- 2 command iz.start.managed / iz.stop.managed
 
-   24 2022- 2- 2 command iz.set.loglevel
-
-   26 2022- 2- 4 review runtime configuration to have a main controller and managed controllers
-      2022- 2- 8 implemented - to be validated - see also #16
-
    29 2022- 2- 6 when reading a controller configuration, check that we have managed *or* manager
-
-   30 2022- 2- 6 when counting services implied by a controller (on start, stop, etc),
-                  check for a potential broker in each subcontroller
 
    31 2022- 2- 6 when counting services implied by a controller (on start, stop, etc),
                   check that there is no loop (a subcontroller does not try to start a top controller of the hierarchy)
 
    33 2022- 2- 6 make sure the controller/subcontrolller hierarchy is one level max (ie. FLAT)
 
-   34 2022- 2- 6 coreCmdline: have a log.info line 'process invoked wth parameters'
-
    35 2022- 2- 6 coreRunfile: use mv/rename to get an atomic lock
 
    37 2022- 2- 7 IZTIAR_DEBUG="" bin/iztiar start -l test debug
                  Cmdline bug ? unable to get the servicename just rifght after parse
 
-   41 2022- 2- 7 cliStart(): the broker should only be forked when the controller has confirmed its startup
-                 e.g. in startupOnIPCMessage()
-
    42 2022- 2- 7 have a list of said running services command
 
-   43 2022- 2- 8 checkService() doesn't request status if ping has abort
+   44 2022- 2- 9 when stopping, have an option to also stop managed controllers
 
-   44
+   45 2022- 2- 9 on checkService() have an option to be quiet, only errors, normal, verbose
+                  verbose implies pidUsage
+
+   46 2022- 2- 9 when stopping, have an option to stop all runnings
+
+   47 2022- 2- 9 when starting, have an option to start all configured
+
+   48
+
+   49
 
 -------------------------------------------------------------------------------------------
  Done
@@ -105,6 +99,10 @@
                  rather handle ECONNREFUSED exception
       2022- 2- 8 seems to be out of the box and a feature already available
 
+   16 2022- 2- 1 test for starting a second controller managed by a first one
+                 handle the case where the first one is not present or not capable
+      2022- 2- 9 done with same as in README.Controller
+
    17 2022- 2- 1 utils.makeFnameDirExists() should call a utils.makeDirExists() to be written
       2022- 2- 1 done
 
@@ -115,15 +113,29 @@
                  as this is more efficient and easier to manage
       2022- 2- 3 done
 
+   24 2022- 2- 2 command iz.set.loglevel
+      20226 2- 9 cancelled as duplicate of #19
+
    25 2022- 2- 4 review logger : doe all should go to the log ? and the loglevel only applying to the console
       2022- 2- 8 logger goes to file with logLevel. Dot.
                  console is only concerned about by verbose mode
+
+   26 2022- 2- 4 review runtime configuration to have a main controller and managed controllers
+      2022- 2- 8 implemented - to be validated - see also #16
+      2022- 2- 9 done
 
    27 2022- 2- 4 review coreRuntime to not read json file each time
       2022- 2- 8 cancelled as we have to be sure we work with the very last version
 
    28 2022- 2- 4 have a forked status in two phases: the pid is it alive, the process does it answer
       2022- 2- 8 implemented this way in coreForkable.CheckService()
+
+   30 2022- 2- 6 when counting services implied by a controller (on start, stop, etc),
+                  check for a potential broker in each subcontroller
+      2022- 2- 9 done
+
+   34 2022- 2- 6 coreCmdline: have a log.info line 'process invoked wth parameters'
+      2022- 2- 9 done
 
    36 2022- 2- 6 start: have an option force-clear to reset the state of stalled runfiles
                  status: have an option remove to remove the stalled services from runfiles
@@ -139,6 +151,13 @@
       2022- 2- 8 done
 
    40 2022- 2- 7 cliStop(): implement the force-stop option
+      2022- 2- 8 done
+
+   41 2022- 2- 7 cliStart(): the broker should only be forked when the controller has confirmed its startup
+                 e.g. in startupOnIPCMessage()
+      2022- 2- 9 done
+
+   43 2022- 2- 8 checkService() doesn't request status if ping has abort
       2022- 2- 8 done
 
 -------------------------------------------------------------------------------------------
