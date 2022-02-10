@@ -58,7 +58,9 @@
 
    47 2022- 2- 9 when starting, have an option to start all configured
 
-   49
+   49 2022- 2-10 Cmdline: verbose incremental doesn't work: -vvvvvvvvv -> 4 and seems to be blocked there
+
+   50
 
 -------------------------------------------------------------------------------------------
  Done
