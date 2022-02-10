@@ -52,12 +52,13 @@
 
    45 2022- 2- 9 on checkService() have an option to be quiet, only errors, normal, verbose
                   verbose implies pidUsage
+      2022- 2-10 Cmdline bug: the first '-v' option doesn't trigger the parseVerbosity() function
 
    46 2022- 2- 9 when stopping, have an option to stop all runnings
 
    47 2022- 2- 9 when starting, have an option to start all configured
 
-   48
+   48 2022- 2-10 replace Iztiar.exitCode() with process.exitCode
 
    49
 
