@@ -4,7 +4,7 @@
     ],
     "name": "iztiar",
     "description": "A field of stars",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "exports": "./lib/index.js",
     "type": "module",
     "license": "TBD",
