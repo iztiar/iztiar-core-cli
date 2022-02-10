@@ -48,8 +48,6 @@
    37 2022- 2- 7 IZTIAR_DEBUG="" bin/iztiar start -l test debug
                  Cmdline bug ? unable to get the servicename just rifght after parse
 
-   44 2022- 2- 9 when stopping, have an option to also stop managed controllers
-
    45 2022- 2- 9 on checkService() have an option to be quiet, only errors, normal, verbose
                   verbose implies pidUsage
       2022- 2-10 Cmdline bug: the first '-v' option doesn't trigger the parseVerbosity() function
@@ -60,7 +58,10 @@
 
    49 2022- 2-10 Cmdline: verbose incremental doesn't work: -vvvvvvvvv -> 4 and seems to be blocked there
 
-   50
+   50 2022- 2-10 cliStop() open a tcp server in order to be able to receive messages from terminating processes
+                  and display a status on the console
+
+   51
 
 -------------------------------------------------------------------------------------------
  Done
@@ -162,6 +163,10 @@
 
    43 2022- 2- 8 checkService() doesn't request status if ping has abort
       2022- 2- 8 done
+
+   44 2022- 2- 9 when stopping, have an option to also stop managed controllers
+      2022- 2-10 this should be the default (same than start)
+      2022- 2-10 done
 
    48 2022- 2-10 replace Iztiar.exitCode() with process.exitCode
       2022- 2-10 done
