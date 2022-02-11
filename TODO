@@ -58,10 +58,9 @@
 
    49 2022- 2-10 Cmdline: verbose incremental doesn't work: -vvvvvvvvv -> 4 and seems to be blocked there
 
-   50 2022- 2-10 cliStop() open a tcp server in order to be able to receive messages from terminating processes
-                  and display a status on the console
+   51 2022- 2-11 coreBroker should be just a plugin
 
-   51
+   52
 
 -------------------------------------------------------------------------------------------
  Done
@@ -170,6 +169,11 @@
 
    48 2022- 2-10 replace Iztiar.exitCode() with process.exitCode
       2022- 2-10 done
+
+   50 2022- 2-10 cliStop() open a tcp server in order to be able to receive messages from terminating processes
+                  and display a status on the console
+                  -> all messages should be relayed by the top controller which will be the last to close
+      2022- 2-11 done
 
 -------------------------------------------------------------------------------------------
  P. Wieser - Created on 2022, Jan. 29th
