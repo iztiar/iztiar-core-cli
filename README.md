@@ -45,7 +45,7 @@ Other considered names were:
 
 ## A copyright notice ##
 
-First, and though lot of the code has been redesigned or rewritten, the very first code set has been shamelessly forked from [homebridge](https://github.com/homebridge).
+First, and though lot of the code has been redesigned or rewritten, the very first code set has been shamelessly forked from [Homebridge](https://github.com/homebridge).
 
 Second, many ideas have been taken from [Jeedom](https://www.jeedom.com/site/en/index.html).
 
