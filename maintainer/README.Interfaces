@@ -1,0 +1,36 @@
+How to define a JS interface ('à la glib')
+
+Principle
+    As a rough summary, defining an interface is creating a common point of view between a consumer of informations and a provider of these same informations.
+    Depending of the context, we may for example have following situations:
+
+    - say an application defines a logging interface:
+        the application will log using the interface-defined API
+        the interface API will be implemented by a replacable provider which will actually logs to database, to file, to a broker, etc.
+
+    The interface is expected to take care of all borrowing details, may bring some attributes to the implementation.
+
+    The interface is expected to bring a well-defined feature to the consumer
+    letting to the provider (the implementation) the responsability to actually do the things
+
+    So defining an interface requires two APIs:
+
+    - first is the API the provider has to implement
+        the provider may define a map (api_function_name, provider_function_name)
+
+    - second is the API the consumer may want to use
+        this may be also thought as a public API for the interface
+        it applies to an object instance, which is passed to the provider, which may itself decide if it provides, or not, the feature for this consumer ?
+
+Say we define an interface, taking our ILogger above example:
+
+const ILogger = {
+
+    // an api to be implemented by the provider of the feature
+        as the provider will be an 'instanceof' ILogger, we can consider this API as some protected/virtual methods to be implemented
+
+    // a public api to be consumable
+};
+
+
+

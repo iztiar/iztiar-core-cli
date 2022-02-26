@@ -1,9 +1,0 @@
-README.architecture
-    A high-level survey of the architecture.
-
-    Environment
-        We are talking of the development vs. staging vs. production, etc.
-        From the core application point of vieuw, you can have as many environments as you want on a same host,
-        though each plugin may exhibit some specificity which might prevent this.
-        The environment is materialized by its storage directory.
-

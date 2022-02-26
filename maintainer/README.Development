@@ -1,0 +1,24 @@
+Initializing development environment
+
+    1. create the remote Github repository say 'iztiar-plugin'
+
+    2. then, locally:
+
+        $ mkdir ~/iztiar-plugin
+        $ cd ~/iztiar-plugin
+        $ touch README.md
+        $ git init
+        $ git add README.md
+        $ git commit -m "Initial commit"
+        $ git branch -M master
+        $ git remote add origin https://github.com/iztiar/iztiar-plugin.git
+
+    3. then, locally
+        edit  .git/config
+        adding [user] group
+        modifying git url to use ssh
+
+    4. then, locally
+
+        $ git push -u origin master
+        $ npm init --scope @iztiar

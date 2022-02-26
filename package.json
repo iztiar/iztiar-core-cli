@@ -1,49 +1,39 @@
 {
-    "comment": [
-        "See https://docs.npmjs.com/cli/v6/configuring-npm/package-json"
-    ],
-    "name": "iztiar",
-    "description": "A field of stars",
-    "version": "0.2.0",
-    "exports": "./lib/index.js",
-    "type": "module",
-    "license": "TBD",
-    "author": "Pierre Wieser",
-    "maintainers": [
-        "TBD"
-    ],
-    "scripts": {},
-    "repository": {
-        "type": "git"
-    },
-    "bin": {
-        "iztiar": "./lib/cli.js"
-    },
-    "engines": {
-        "node": ">=14"
-    },
-    "files": [
-        "README.md",
-        "config-sample.json",
-        "LICENSE",
-        "lib",
-        "bin"
-    ],
-    "preferGlobal": true,
-    "dependencies": {
-        "aedes": "^0.46.2",
-        "aedes-logging": "^2.0.1",
-        "aedes-persistence": "^8.1.3",
-        "aedes-server-factory": "^0.2.1",
-        "aedes-stats": "^4.0.0",
-        "chalk": "^5.0.0",
-        "commander": "^8.3",
-        "deepequal": "0.0.1",
-        "mqemitter": "^4.5.0",
-        "pidusage": "^3.0.0",
-        "pino": "^7.6",
-        "ps": "^1.0.0",
-        "semver": "^7.3.5",
-        "sprintf-js": "^1.1.2"
-    }
+  "name": "@iztiar/iztiar-core",
+  "version": "0.2.0",
+  "description": "Itziar : vient du basque et signifie « champ d’étoiles ». \tHas been changed here to iztiaz as I find easier to pronounce...",
+  "main": "index.js",
+  "directories": {
+    "src": "src"
+  },
+  "dependencies": {
+    "aedes": "^0.46.2",
+    "aedes-logging": "^2.0.1",
+    "aedes-persistence": "^8.1.3",
+    "aedes-server-factory": "^0.2.1",
+    "aedes-stats": "^4.0.0",
+    "chalk": "^5.0.0",
+    "commander": "^8.3.0",
+    "deepequal": "^0.0.1",
+    "mqemitter": "^4.5.0",
+    "pidusage": "^3.0.0",
+    "pino": "^7.6.4",
+    "ps": "^1.0.0",
+    "semver": "^7.3.5",
+    "sprintf-js": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iztiar/iztiar-core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iztiar/iztiar-core/issues"
+  },
+  "homepage": "https://github.com/iztiar/iztiar-core#readme"
 }

@@ -1,7 +1,5 @@
 Controller
     What is it
-        A coreController is thought to manage other daemons, the WebUI being only one particular of these.
-        Several coreController's may collaborate together, provided that all collaborating controllers be in the same host.
 
         In other words, a very big architecture may be:
 
@@ -18,9 +16,6 @@ Controller
                 each one have zero to several (locally) managed coreControllers.
 
     Management
-        The coreController is identified by a name
-            freely chosen by the user
-            which must be unique on the host (and that we suggest to make unique in the whole architecture)
             Whether the coreController is the main one on the host, or a managed one is chosen at startup time:
             to start a managed coreController, you have to say at startup by which coreController it is managed by.
 
