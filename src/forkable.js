@@ -8,6 +8,9 @@ import { Iztiar, coreConfig, coreError, coreRunfile, msg, utils } from './import
 
 export class coreForkable {
 
+    // # is expected to points to private
+    #myPrivate = 0;
+    
     static s = {
         STARTING: 'starting',
         RUNNING: 'running',
