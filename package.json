@@ -1,7 +1,7 @@
 {
-  "name": "@iztiar/iztiar-core",
+  "name": "@iztiar/iztiar-core-cli",
   "version": "0.2.0",
-  "description": "Itziar : vient du basque et signifie « champ d’étoiles ». \tHas been changed here to iztiaz as I find easier to pronounce...",
+  "description": "Itziar command-line interface",
   "main": "index.js",
   "directories": {
     "src": "src"
@@ -28,12 +28,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/iztiar/iztiar-core.git"
+    "url": "git+ssh://git@github.com/iztiar/iztiar-core-cli.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iztiar/iztiar-core/issues"
+    "url": "https://github.com/iztiar/iztiar-core-cli/issues"
   },
-  "homepage": "https://github.com/iztiar/iztiar-core#readme"
+  "homepage": "https://github.com/iztiar/iztiar-core-cli#readme"
 }
