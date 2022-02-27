@@ -14,11 +14,13 @@ Initializing development environment
         $ git remote add origin https://github.com/iztiar/iztiar-plugin.git
 
     3. then, locally
-        edit  .git/config
-        adding [user] group
-        modifying git url to use ssh
+        $ vi .git/config
+          adding [user] group
+          modifying git url to use ssh
 
     4. then, locally
 
         $ git push -u origin master
         $ npm init --scope @iztiar
+        $ npm publish --access public
+
